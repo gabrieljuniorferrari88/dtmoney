@@ -43,9 +43,9 @@ export const { styled, createTheme, css } = createStitches({
       3: '15px',
     },
     fontSizes: {
-      1: '12px',
-      2: '13px',
-      3: '15px',
+      1: '1rem',
+      2: '2rem',
+      3: '3rem',
     },
     fonts: {
       untitled: 'Untitled Sans, apple-system, sans-serif',
