@@ -1,4 +1,4 @@
-import { Header } from 'components/Header';
+import { Header } from './components/Header';
 import { globalStyles } from './stitches.config';
 
 export function App() {
