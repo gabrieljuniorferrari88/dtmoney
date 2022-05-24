@@ -22,8 +22,8 @@ export const { styled, createTheme, css } = createStitches({
       ...yellow,
       ...slate,
 
-      title: '$slate12',
-      body: '$slate11',
+      title: '$slate11',
+      body: '$slate12',
 
       background: '#f0f2f5',
       shape: '$slate1',

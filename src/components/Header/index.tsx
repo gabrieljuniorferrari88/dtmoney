@@ -1,5 +1,6 @@
 import { Container, Content } from './styles';
 import logoImg from '../../assets/logo.svg';
+import { Dashboard } from '../Dashboard';
 
 export function Header() {
   return (
