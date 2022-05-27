@@ -8,103 +8,113 @@ import {
   greenDark,
   slate,
   slateDark,
+  blackA,
 } from '@radix-ui/colors';
 // Spread the scales in your light and dark themes
 
-import { createStitches, globalCss } from '@stitches/react';
+import { createStitches } from '@stitches/react';
 
-export const { styled, createTheme, css } = createStitches({
-  theme: {
-    colors: {
-      ...blue,
-      ...red,
-      ...green,
-      ...yellow,
-      ...slate,
+export const { styled, createTheme, css, globalCss, getCssText } =
+  createStitches({
+    theme: {
+      colors: {
+        ...blue,
+        ...red,
+        ...green,
+        ...yellow,
+        ...slate,
+        ...blackA,
 
-      title: '$slate11',
-      body: '$slate12',
+        title: '$slate11',
+        body: '$slate8',
 
-      background: '#f0f2f5',
-      shape: '$slate1',
+        background: '#f0f2f5',
+        shape: '$slate1',
 
-      success1: '$green1',
-      success2: '$green2',
+        success1: '$green1',
+        success2: '$green2',
 
-      warning1: '$yellow1',
-      warning2: '$yellow2',
+        warning1: '$yellow1',
+        warning2: '$yellow2',
 
-      danger1: '$red1',
-      danger2: '$red2',
+        danger1: '$red1',
+        danger2: '$red2',
+      },
+      space: {
+        '0': `0px`,
+        '1': `1px`,
+        '4': `0.25rem`,
+        '8': `0.5rem`,
+        '12': `0.75rem`,
+        '16': `1rem`,
+        '24': `1.5rem`,
+        '32': `2rem`,
+        '48': `3rem`,
+        '64': `4rem`,
+      },
+      fontSizes: {
+        1: '1rem',
+        2: '2rem',
+        3: '3rem',
+      },
+      fonts: {
+        untitled: 'Untitled Sans, apple-system, sans-serif',
+        mono: 'Söhne Mono, menlo, monospace',
+      },
+      fontWeights: {},
+      lineHeights: {},
+      letterSpacings: {},
+      sizes: {},
+      borderWidths: {},
+      borderStyles: {},
+      radii: {},
+      shadows: {},
+      zIndices: {},
+      transitions: {},
     },
-    space: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-    },
-    fontSizes: {
-      1: '1rem',
-      2: '2rem',
-      3: '3rem',
-    },
-    fonts: {
-      untitled: 'Untitled Sans, apple-system, sans-serif',
-      mono: 'Söhne Mono, menlo, monospace',
-    },
-    fontWeights: {},
-    lineHeights: {},
-    letterSpacings: {},
-    sizes: {},
-    borderWidths: {},
-    borderStyles: {},
-    radii: {},
-    shadows: {},
-    zIndices: {},
-    transitions: {},
-  },
-  utils: {
-    // Abbreviated margin properties
-    m: (value: any) => ({
-      margin: value,
-    }),
-    mt: (value: any) => ({
-      marginTop: value,
-    }),
-    mr: (value: any) => ({
-      marginRight: value,
-    }),
-    mb: (value: any) => ({
-      marginBottom: value,
-    }),
-    ml: (value: any) => ({
-      marginLeft: value,
-    }),
-    mx: (value: any) => ({
-      marginLeft: value,
-      marginRight: value,
-    }),
-    my: (value: any) => ({
-      marginTop: value,
-      marginBottom: value,
-    }),
+    utils: {
+      // Abbreviated margin properties
+      m: (value: any) => ({
+        margin: value,
+      }),
+      mt: (value: any) => ({
+        marginTop: value,
+      }),
+      mr: (value: any) => ({
+        marginRight: value,
+      }),
+      mb: (value: any) => ({
+        marginBottom: value,
+      }),
+      ml: (value: any) => ({
+        marginLeft: value,
+      }),
+      mx: (value: any) => ({
+        marginLeft: value,
+        marginRight: value,
+      }),
+      my: (value: any) => ({
+        marginTop: value,
+        marginBottom: value,
+      }),
 
-    // A property for applying width/height together
-    size: (value: any) => ({
-      width: value,
-      height: value,
-    }),
+      // A property for applying width/height together
+      size: (value: any) => ({
+        width: value,
+        height: value,
+      }),
 
-    // A property to apply linear gradient
-    linearGradient: (value: any) => ({
-      backgroundImage: `linear-gradient(${value})`,
-    }),
+      // A property to apply linear gradient
+      linearGradient: (value: any) => ({
+        backgroundImage: `linear-gradient(${value})`,
+      }),
 
-    // An abbreviated property for border-radius
-    br: (value: any) => ({
-      borderRadius: value,
-    }),
-  },
-});
+      // An abbreviated property for border-radius
+      br: (value: any) => ({
+        borderRadius: value,
+      }),
+    },
+  });
 
 export const darkTheme = createTheme({
   colors: {
