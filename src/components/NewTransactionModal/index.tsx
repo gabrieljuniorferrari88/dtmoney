@@ -3,7 +3,7 @@ import * as S from './styles';
 
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
-import { useState } from 'react';
+import { FormEvent, SetStateAction, useState } from 'react';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -14,7 +14,22 @@ export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
+  const [title, setTitle] = useState('');
+  const [value, setValue] = useState(0);
+  const [category, setCategory] = useState('');
   const [type, setType] = useState('income');
+
+  function handleCreatedNewTransaction(event: FormEvent) {
+    event.preventDefault();
+
+    console.log({
+      title,
+      value,
+      category,
+      type,
+    });
+  }
+
   return (
     <Modal
       isOpen={isOpen}
@@ -26,11 +41,24 @@ export function NewTransactionModal({
         <S.ImgClose />
       </S.ButtonClose>
 
-      <S.Container>
+      <S.Container onSubmit={handleCreatedNewTransaction}>
         <S.H2>Nova Transação</S.H2>
 
-        <S.Input placeholder="Título" />
-        <S.Input type="number" placeholder="Valor" />
+        <S.Input
+          placeholder="Título"
+          value={title}
+          onChange={(event: { target: { value: SetStateAction<string> } }) =>
+            setTitle(event.target.value)
+          }
+        />
+        <S.Input
+          type="number"
+          placeholder="Valor"
+          value={value}
+          onChange={(event: { target: { value: any } }) =>
+            setValue(Number(event.target.value))
+          }
+        />
 
         <S.TypeContainer>
           <S.TypeContainerButton
@@ -40,6 +68,7 @@ export function NewTransactionModal({
             onClick={() => {
               setType('income');
             }}
+            value={type}
           >
             <S.TypeContainerImg
               src={incomeImg}
@@ -55,6 +84,7 @@ export function NewTransactionModal({
               setType('outcome');
             }}
             isActive={type === 'outcome' ? 'outcome' : 'none'}
+            value={type}
           >
             <S.TypeContainerImg
               src={outcomeImg}
@@ -64,7 +94,11 @@ export function NewTransactionModal({
           </S.TypeContainerButton>
         </S.TypeContainer>
 
-        <S.Input placeholder="Categoria" />
+        <S.Input
+          placeholder="Categoria"
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        />
 
         <S.ButtonTransaction type="submit">Cadastrar</S.ButtonTransaction>
       </S.Container>
