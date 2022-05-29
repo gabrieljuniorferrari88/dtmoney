@@ -1,0 +1,20 @@
+import Modal from 'react-modal';
+import * as S from './styles';
+
+interface NewTransactionModalProps {
+  isOpen: boolean;
+  onRequestClose: () => void;
+}
+
+export function NewTransactionModal({
+  isOpen,
+  onRequestClose,
+}: NewTransactionModalProps) {
+  return (
+    <S.Container>
+      <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+        <h2>Nova Transação</h2>
+      </Modal>
+    </S.Container>
+  );
+}
