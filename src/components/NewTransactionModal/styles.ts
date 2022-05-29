@@ -21,12 +21,13 @@ export const Input = styled('input', {
   fontWeight: '400',
   fontSize: '$16',
 
-  '&::placeholder': {
-    color: '$body',
+  mb: '$24',
+  '& + input': {
+    mb: '$24',
   },
 
-  '& + input': {
-    marginTop: '$16',
+  '&::placeholder': {
+    color: '$body',
   },
 
   '&:focus': {
@@ -41,7 +42,6 @@ export const ButtonTransaction = styled('button', {
   borderRadius: '$1',
   border: '0',
   fontSize: '$16',
-  marginTop: '$24',
   backgroundColor: '$green11',
   color: '$green1',
 
@@ -69,4 +69,52 @@ export const ImgClose = styled(Cross1Icon, {
   '&:hover': {
     color: '$red9',
   },
+});
+
+export const TypeContainer = styled('div', {
+  mb: '$24',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gap: '$8',
+});
+
+export const TypeContainerButton = styled('button', {
+  height: '$64',
+  border: '1px solid #d7d7d7',
+  borderRadius: '$1',
+  backgroundColor: 'transparent',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  // '&:hover': {
+  //   borderColor: '$green10',
+  // },
+  variants: {
+    border: {
+      income: {
+        '&:hover': {
+          borderColor: '$green10',
+        },
+      },
+      outcome: {
+        '&:hover': {
+          borderColor: '$red9',
+        },
+      },
+    },
+  },
+});
+
+export const TypeContainerImg = styled('img', {
+  width: '$24',
+  height: '$24',
+});
+
+export const TypeContainerSpan = styled('span', {
+  display: 'inline-block',
+  ml: '$16',
+  fontSize: '$16',
+  color: '$title',
 });

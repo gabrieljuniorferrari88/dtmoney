@@ -1,7 +1,8 @@
 import Modal from 'react-modal';
 import * as S from './styles';
 
-import { Cross1Icon } from '@radix-ui/react-icons';
+import incomeImg from '../../assets/income.svg';
+import outcomeImg from '../../assets/outcome.svg';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -28,6 +29,25 @@ export function NewTransactionModal({
 
         <S.Input placeholder="Título" />
         <S.Input type="number" placeholder="Valor" />
+
+        <S.TypeContainer>
+          <S.TypeContainerButton type="button" border="income">
+            <S.TypeContainerImg
+              src={incomeImg}
+              alt="Ícone de entrada de dinheiro"
+            />
+            <S.TypeContainerSpan>Entrada</S.TypeContainerSpan>
+          </S.TypeContainerButton>
+
+          <S.TypeContainerButton type="button" border="outcome">
+            <S.TypeContainerImg
+              src={outcomeImg}
+              alt="Ícone de saída de dinheiro"
+            />
+            <S.TypeContainerSpan>Saída</S.TypeContainerSpan>
+          </S.TypeContainerButton>
+        </S.TypeContainer>
+
         <S.Input placeholder="Categoria" />
 
         <S.ButtonTransaction type="submit">Cadastrar</S.ButtonTransaction>
