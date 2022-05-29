@@ -155,4 +155,25 @@ export const globalStyles = globalCss({
   'h1, h2, h3, h4, h5, h6, strong': {
     fontWeight: '600',
   },
+  '.react-modal-overlay': {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  '.react-modal-content': {
+    width: '100%',
+    maxWidth: '576px',
+    backgroundColor: '$background',
+    padding: '$48',
+
+    position: 'relative',
+    borderRadius: '0.25rem',
+  },
 });

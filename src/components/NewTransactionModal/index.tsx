@@ -11,10 +11,21 @@ export function NewTransactionModal({
   onRequestClose,
 }: NewTransactionModalProps) {
   return (
-    <S.Container>
-      <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      overlayClassName="react-modal-overlay"
+      className="react-modal-content"
+    >
+      <S.Container>
         <h2>Nova Transação</h2>
-      </Modal>
-    </S.Container>
+
+        <input placeholder="Título" />
+        <input type="number" placeholder="Valor" />
+        <input placeholder="Categoria" />
+
+        <button type="submit">Cadastrar</button>
+      </S.Container>
+    </Modal>
   );
 }

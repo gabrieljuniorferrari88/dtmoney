@@ -1,5 +1,3 @@
 import { styled } from '../../stitches.config';
 
-export const Container = styled('div', {
-  flex: '1',
-});
+export const Container = styled('form', {});
