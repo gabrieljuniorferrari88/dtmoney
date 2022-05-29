@@ -23,6 +23,8 @@ export const Content = styled('div', {
     borderRadius: '0.25rem',
     height: '3rem',
 
+    transition: 'background .2s',
+
     '&:hover': {
       backgroundColor: '$blue10',
     },

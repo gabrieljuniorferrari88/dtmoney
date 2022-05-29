@@ -1,6 +1,8 @@
 import Modal from 'react-modal';
 import * as S from './styles';
 
+import { Cross1Icon } from '@radix-ui/react-icons';
+
 interface NewTransactionModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -17,14 +19,18 @@ export function NewTransactionModal({
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
+      <S.ButtonClose type="button" onClick={onRequestClose}>
+        <S.ImgClose />
+      </S.ButtonClose>
+
       <S.Container>
-        <h2>Nova Transação</h2>
+        <S.H2>Nova Transação</S.H2>
 
-        <input placeholder="Título" />
-        <input type="number" placeholder="Valor" />
-        <input placeholder="Categoria" />
+        <S.Input placeholder="Título" />
+        <S.Input type="number" placeholder="Valor" />
+        <S.Input placeholder="Categoria" />
 
-        <button type="submit">Cadastrar</button>
+        <S.ButtonTransaction type="submit">Cadastrar</S.ButtonTransaction>
       </S.Container>
     </Modal>
   );
