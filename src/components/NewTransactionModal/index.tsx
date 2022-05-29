@@ -3,6 +3,7 @@ import * as S from './styles';
 
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
+import { useState } from 'react';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
+  const [type, setType] = useState('income');
   return (
     <Modal
       isOpen={isOpen}
@@ -31,7 +33,14 @@ export function NewTransactionModal({
         <S.Input type="number" placeholder="Valor" />
 
         <S.TypeContainer>
-          <S.TypeContainerButton type="button" border="income">
+          <S.TypeContainerButton
+            type="button"
+            border="income"
+            isActive={type === 'income' ? 'income' : 'none'}
+            onClick={() => {
+              setType('income');
+            }}
+          >
             <S.TypeContainerImg
               src={incomeImg}
               alt="Ícone de entrada de dinheiro"
@@ -39,7 +48,14 @@ export function NewTransactionModal({
             <S.TypeContainerSpan>Entrada</S.TypeContainerSpan>
           </S.TypeContainerButton>
 
-          <S.TypeContainerButton type="button" border="outcome">
+          <S.TypeContainerButton
+            type="button"
+            border="outcome"
+            onClick={() => {
+              setType('outcome');
+            }}
+            isActive={type === 'outcome' ? 'outcome' : 'none'}
+          >
             <S.TypeContainerImg
               src={outcomeImg}
               alt="Ícone de saída de dinheiro"

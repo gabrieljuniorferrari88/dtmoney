@@ -92,6 +92,19 @@ export const TypeContainerButton = styled('button', {
   //   borderColor: '$green10',
   // },
   variants: {
+    isActive: {
+      income: {
+        backgroundColor: '$green5',
+        border: '0',
+      },
+      outcome: {
+        backgroundColor: '$red5',
+        border: '0',
+      },
+      none: {
+        backgroundColor: 'transparent',
+      },
+    },
     border: {
       income: {
         '&:hover': {
