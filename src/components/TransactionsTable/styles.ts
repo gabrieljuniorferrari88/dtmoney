@@ -30,11 +30,11 @@ export const Td = styled('td', {
   },
 
   variants: {
-    test: {
-      true: {
+    colorTextValue: {
+      income: {
         color: '$green9',
       },
-      false: {
+      outcome: {
         color: '$red9',
       },
     },

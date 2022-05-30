@@ -8,6 +8,37 @@ createServer({
     transaction: Model,
   },
 
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Salário',
+          value: '2000',
+          type: 'income',
+          category: 'Salário',
+          createdAt: new Date('2022-05-29 09:00:00'),
+        },
+        {
+          id: 2,
+          title: 'Comida',
+          value: '1000',
+          type: 'outcome',
+          category: 'Comida',
+          createdAt: new Date('2022-05-29 09:00:00'),
+        },
+        {
+          id: 3,
+          title: 'Viagem',
+          value: '500',
+          type: 'outcome',
+          category: 'Viagem',
+          createdAt: new Date('2022-05-29 09:00:00'),
+        },
+      ],
+    });
+  },
+
   routes() {
     this.namespace = 'api';
 
