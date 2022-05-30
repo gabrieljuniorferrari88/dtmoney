@@ -4,6 +4,7 @@ import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
 import { NewTransactionModal } from './components/NewTransactionModal';
 import { globalStyles } from './stitches.config';
+import { TransactionsProvider } from './TransactionsContext';
 
 globalStyles();
 Modal.setAppElement('#root');
@@ -19,7 +20,7 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransactionModal={handlerOpenNewTransactionModal} />
       <Dashboard />
 
@@ -27,6 +28,6 @@ export function App() {
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handlerCloseNewTransactionModal}
       />
-    </>
+    </TransactionsProvider>
   );
 }
